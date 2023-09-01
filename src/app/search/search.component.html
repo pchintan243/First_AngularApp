@@ -1,11 +1,11 @@
-<div class="w-25 input-group rounded">
+<div class="w-25 input-group rounded" [ngClass]="{changeBackground: searchValue != ''}">
 
     <!-- Two way data binding is combination of property binding & event binding. -->
 
     <!-- For property binding we use set of square bracket -->
 
     <!-- For event binding we use "" -->
-    <input type="text" placeholder="Search" (input)="changeSeachValue($event)" />
+    <!-- <input type="text" placeholder="Search" (input)="changeSeachValue($event)" /> -->
 
     <!-- For two way data binding -->
     <input type="text" placeholder="Search" [(ngModel)]="searchValue" />
