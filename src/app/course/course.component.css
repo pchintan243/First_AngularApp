@@ -1,0 +1,29 @@
+.img-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* object-fit: cover; */
+    height: 250px;
+    width: 100%;
+}
+.prem-tag {
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.pr-tag {
+    font-size: 23px;
+}
+.desc {
+    height: 100px;
+}
+
+.price-tag {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-class {
+    display: flex;
+    justify-content: space-around;
+}
