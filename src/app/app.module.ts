@@ -9,6 +9,10 @@ import { SearchComponent } from './search/search.component';
 import { BadgeComponent } from './badge/badge.component';
 import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './product/product.component';
+import { CourseComponent } from './course/course.component';
+import { HeaderComponent } from './header/header.component';
+import { FindComponent } from './find/find.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { ProductComponent } from './product/product.component';
     NavbarComponent,
     SearchComponent,
     BadgeComponent,
-    ProductComponent
+    ProductComponent,
+    CourseComponent,
+    HeaderComponent,
+    FindComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
