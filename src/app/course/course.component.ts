@@ -9,7 +9,7 @@ export class CourseComponent {
   course = [
     {
       "id": 1,
-      "available": "Premium",
+      "type": "Premium",
       "title": "iPhone 9",
       "description": "An apple mobile which is nothing like apple",
       "price": 549,
@@ -23,7 +23,7 @@ export class CourseComponent {
     },
     {
       "id": 2,
-      "available": "Free",
+      "type": "Free",
       "title": "iPhone X",
       "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
       "price": 899,
@@ -37,7 +37,7 @@ export class CourseComponent {
     },
     {
       "id": 3,
-      "available": "Premium",
+      "type": "Premium",
       "title": "Samsung Universe 9",
       "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
       "price": 1249,
@@ -53,7 +53,7 @@ export class CourseComponent {
     },
     {
       "id": 4,
-      "available": "Free",
+      "type": "Free",
       "title": "OPPOF19",
       "description": "OPPO F19 is officially announced on April 2021.",
       "price": 280,
@@ -73,7 +73,7 @@ export class CourseComponent {
     },
     {
       "id": 5,
-      "available": "Premium",
+      "type": "Premium",
       "title": "Huawei P30",
       "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
       "price": 499,
@@ -91,7 +91,7 @@ export class CourseComponent {
     },
     {
       "id": 6,
-      "available": "Premium",
+      "type": "Premium",
       "title": "MacBook Pro",
       "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
       "price": 1749,
@@ -110,7 +110,7 @@ export class CourseComponent {
     },
     {
       "id": 7,
-      "available": "Premium",
+      "type": "Premium",
       "title": "Samsung Galaxy Book",
       "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
       "price": 1499,
@@ -129,7 +129,7 @@ export class CourseComponent {
     },
     {
       "id": 8,
-      "available": "Free",
+      "type": "Free",
       "title": "Microsoft Surface Laptop 4",
       "description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
       "price": 1499,
@@ -149,7 +149,7 @@ export class CourseComponent {
     },
     {
       "id": 9,
-      "available": "Free",
+      "type": "Free",
       "title": "Infinix INBOOK",
       "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
       "price": 1099,
@@ -169,7 +169,7 @@ export class CourseComponent {
     },
     {
       "id": 10,
-      "available": "Free",
+      "type": "Free",
       "title": "HP Pavilion 15-DK1056WM",
       "description": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
       "price": 1099,
@@ -188,7 +188,7 @@ export class CourseComponent {
     },
     {
       "id": 11,
-      "available": "Premium",
+      "type": "Premium",
       "title": "perfume Oil",
       "description": "Mega Discount, Impression of Acqua Di Gio by GiorgioArmani concentrated attar perfume Oil",
       "price": 13,
@@ -207,7 +207,7 @@ export class CourseComponent {
     },
     {
       "id": 12,
-      "available": "Premium",
+      "type": "Premium",
       "title": "Brown Perfume",
       "description": "Royal_Mirage Sport Brown Perfume for Men & Women - 120ml",
       "price": 40,
@@ -227,7 +227,7 @@ export class CourseComponent {
     },
     {
       "id": 13,
-      "available": "Free",
+      "type": "Free",
       "title": "Fog Scent Xpressio Perfume",
       "description": "Product details of Best Fog Scent Xpressio Perfume 100ml For Men cool long lasting perfumes for Men",
       "price": 13,
@@ -247,7 +247,7 @@ export class CourseComponent {
     },
     {
       "id": 14,
-      "available": "Free",
+      "type": "Free",
       "title": "Non-Alcoholic Perfume Oil",
       "description": "Original Al Munakh® by Mahal Al Musk | 6ml Non-Alcoholic Concentrated Perfume Oil",
       "price": 120,
@@ -266,7 +266,7 @@ export class CourseComponent {
     },
     {
       "id": 15,
-      "available": "Free",
+      "type": "Free",
       "title": "Eau De Perfume Spray",
       "description": "Genuine  Al-Rehab spray perfume from UAE/Saudi Arabia/Yemen High Quality",
       "price": 30,
@@ -285,4 +285,13 @@ export class CourseComponent {
       ]
     }
   ]
+  getTotalCourse() {
+    return this.course.length;
+  }
+  getFreeCourse() {
+    return this.course.filter(course => course.type === 'Free').length;
+  }
+  getPremiumCourse() {
+    return this.course.filter(course => course.type === 'Premium').length;
+  }
 }

@@ -1,6 +1,9 @@
 <div>
     <app-find></app-find>
-    <app-filter></app-filter>
+    <app-filter [all]="getTotalCourse()"
+    [free]="getFreeCourse()"
+    [premium]="getPremiumCourse()"
+    ></app-filter>
 </div>
 <div class="row" style=" display: flex; justify-content: space-evenly;">
     <div *ngFor="let item of course" class="card p-0 my-2" style="width: 300px;">
@@ -10,7 +13,7 @@
             <p class="card-text desc">{{item.description}}</p>
             <div class="price-tag">
                 <span class="prem-tag"
-                    [ngStyle]="{color: item.available === 'Premium' ? 'red' : 'green'}">{{item.available}}</span>
+                    [ngStyle]="{color: item.type === 'Premium' ? 'red' : 'green'}">{{item.type}}</span>
                 <span class="pr-tag"><strong>Price:</strong> {{item.price}}$</span>
             </div>
         </div>
