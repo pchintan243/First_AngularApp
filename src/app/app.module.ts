@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SearchComponent } from './search/search.component';
 import { BadgeComponent } from './badge/badge.component';
 import { FormsModule } from '@angular/forms';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     ContainerComponent,
     NavbarComponent,
     SearchComponent,
-    BadgeComponent
+    BadgeComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
