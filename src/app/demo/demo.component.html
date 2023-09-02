@@ -1,0 +1,8 @@
+<!-- Template reference variable -->
+<!-- #getText store the reference of input value and store it into a dom. -->
+<!-- keyup event is use for get actual text into p tag after every event occurs it reflects. -->
+<input type="text" #getText (keyup)="0">
+
+<!-- Another example of template reference -->
+<button (click)="onClick(getText)">Click me</button>
+<p>{{ getText.value}}</p>
