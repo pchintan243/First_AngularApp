@@ -1,25 +1,29 @@
 <div>
     <app-find></app-find>
-    <app-filter [all]="getTotalCourse()"
-    [free]="getFreeCourse()"
-    [premium]="getPremiumCourse()"
-    ></app-filter>
+    <app-filter [total]="getTotalCourse()" 
+                [free]="getFreeCourse()" 
+                [premium]="getPremiumCourse()"
+                (filterRadio)="onRadioButtonChangeData($event)">
+    </app-filter>
 </div>
 <div class="row" style=" display: flex; justify-content: space-evenly;">
-    <div *ngFor="let item of course" class="card p-0 my-2" style="width: 300px;">
-        <img [src]="item.thumbnail" class="card-img-top img-card" alt="...">
-        <div class="card-body">
-            <h5 class="card-title"><strong>{{item.title}}</strong></h5>
-            <p class="card-text desc">{{item.description}}</p>
-            <div class="price-tag">
-                <span class="prem-tag"
-                    [ngStyle]="{color: item.type === 'Premium' ? 'red' : 'green'}">{{item.type}}</span>
-                <span class="pr-tag"><strong>Price:</strong> {{item.price}}$</span>
+    <ng-container *ngFor="let item of course">
+        <div class="card p-0 my-2" style="width: 300px;"
+            *ngIf="courseRadioButton === 'All' || courseRadioButton === item.type">
+            <img [src]="item.thumbnail" class="card-img-top img-card" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><strong>{{item.title}}</strong></h5>
+                <p class="card-text desc">{{item.description}}</p>
+                <div class="price-tag">
+                    <span class="prem-tag"
+                        [ngStyle]="{color: item.type === 'Premium' ? 'red' : 'green'}">{{item.type}}</span>
+                    <span class="pr-tag"><strong>Price:</strong> {{item.price}}$</span>
+                </div>
+            </div>
+            <div class="btn-class">
+                <button class="btn btn-primary my-2">Buy Now</button>
+                <button class="btn btn-danger my-2">Show details</button>
             </div>
         </div>
-        <div class="btn-class">
-            <button class="btn btn-primary my-2">Buy Now</button>
-            <button class="btn btn-danger my-2">Show details</button>
-        </div>
-    </div>
+    </ng-container>
 </div>

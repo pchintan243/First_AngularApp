@@ -294,4 +294,10 @@ export class CourseComponent {
   getPremiumCourse() {
     return this.course.filter(course => course.type === 'Premium').length;
   }
+
+  courseRadioButton: string = 'All';
+
+  onRadioButtonChangeData(data: string) {
+    this.courseRadioButton = data;
+  }
 }
