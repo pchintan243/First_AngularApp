@@ -16,6 +16,7 @@ import { FilterComponent } from './filter/filter.component';
 import { DemoComponent } from './demo/demo.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { FormComponent } from './form/form.component';
+import { EncapsulationComponent } from './encapsulation/encapsulation.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FormComponent } from './form/form.component';
     FilterComponent,
     DemoComponent,
     CustomerListComponent,
-    FormComponent
+    FormComponent,
+    EncapsulationComponent
   ],
   imports: [
     BrowserModule,
