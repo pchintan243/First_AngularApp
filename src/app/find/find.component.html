@@ -1,4 +1,5 @@
 <div class="search-container">
     <span><strong>Search: </strong></span>
-    <input type="text">
+    <input type="text" [(ngModel)]="getText"
+    (input)="onTextChange()">
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-find',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./find.component.css']
 })
 export class FindComponent {
+  getText: string = '';
 
+  @Output()
+  searchValueGet: EventEmitter<string> = new EventEmitter<string>();
+
+  onTextChange() {
+    this.searchValueGet.emit(this.getText);
+  }
 }

@@ -300,4 +300,12 @@ export class CourseComponent {
   onRadioButtonChangeData(data: string) {
     this.courseRadioButton = data;
   }
+
+
+  searchText: string = '';
+
+  onSearchTextEntered(searchValue: string) {
+    this.searchText = searchValue;
+    console.log(this.searchText);
+  }
 }
