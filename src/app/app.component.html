@@ -1,6 +1,11 @@
 <!-- <app-container></app-container> -->
 
 <div class="container">
-    <app-header></app-header>
-    <app-course></app-course>
+    <!-- <app-header></app-header> -->
+    <!-- <app-course></app-course> -->
+
+    <!-- <app-demo></app-demo> -->
+    <app-customer-list #handleCustomer></app-customer-list>
+    <!-- We use ? because selectedCustomer value is by default null. -->
+    <p>{{handleCustomer.selectedCustomer?.name}}</p>
 </div>

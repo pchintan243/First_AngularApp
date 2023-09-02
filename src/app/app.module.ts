@@ -13,6 +13,8 @@ import { CourseComponent } from './course/course.component';
 import { HeaderComponent } from './header/header.component';
 import { FindComponent } from './find/find.component';
 import { FilterComponent } from './filter/filter.component';
+import { DemoComponent } from './demo/demo.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FilterComponent } from './filter/filter.component';
     CourseComponent,
     HeaderComponent,
     FindComponent,
-    FilterComponent
+    FilterComponent,
+    DemoComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,
