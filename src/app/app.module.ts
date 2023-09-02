@@ -17,6 +17,7 @@ import { DemoComponent } from './demo/demo.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { FormComponent } from './form/form.component';
 import { EncapsulationComponent } from './encapsulation/encapsulation.component';
+import { NgContentComponent } from './ng-content/ng-content.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EncapsulationComponent } from './encapsulation/encapsulation.component'
     DemoComponent,
     CustomerListComponent,
     FormComponent,
-    EncapsulationComponent
+    EncapsulationComponent,
+    NgContentComponent
   ],
   imports: [
     BrowserModule,
