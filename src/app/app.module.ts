@@ -20,6 +20,7 @@ import { EncapsulationComponent } from './encapsulation/encapsulation.component'
 import { NgContentComponent } from './ng-content/ng-content.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { LifecycleSearchComponent } from './lifecycle-search/lifecycle-search.component';
+import { ContentChildComponent } from './content-child/content-child.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { LifecycleSearchComponent } from './lifecycle-search/lifecycle-search.co
     EncapsulationComponent,
     NgContentComponent,
     LifecycleComponent,
-    LifecycleSearchComponent
+    LifecycleSearchComponent,
+    ContentChildComponent
   ],
   imports: [
     BrowserModule,
