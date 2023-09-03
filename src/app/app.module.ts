@@ -22,6 +22,7 @@ import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { LifecycleSearchComponent } from './lifecycle-search/lifecycle-search.component';
 import { ContentChildComponent } from './content-child/content-child.component';
 import { SetBackgroundDirective } from './CustomDirective/setbackground.directive';
+import { HighlightDirective } from './CustomDirective/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SetBackgroundDirective } from './CustomDirective/setbackground.directiv
     LifecycleComponent,
     LifecycleSearchComponent,
     ContentChildComponent,
-    SetBackgroundDirective
+    SetBackgroundDirective,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
