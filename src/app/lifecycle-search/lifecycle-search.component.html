@@ -1,0 +1,10 @@
+<div class="search-container">
+    <!-- Template reference -->
+    <input type="text" #searchValue>
+    <button (click)="getText(searchValue)">Submit</button>
+    <!-- Custom property binding -->
+    <app-lifecycle [value]="inputText" *ngIf="destroy"></app-lifecycle>
+
+    <!-- Destroy example -->
+    <button (click)="onDestroy()">Destroy</button>
+</div>

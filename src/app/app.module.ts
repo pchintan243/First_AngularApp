@@ -18,6 +18,8 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { FormComponent } from './form/form.component';
 import { EncapsulationComponent } from './encapsulation/encapsulation.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
+import { LifecycleSearchComponent } from './lifecycle-search/lifecycle-search.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { NgContentComponent } from './ng-content/ng-content.component';
     CustomerListComponent,
     FormComponent,
     EncapsulationComponent,
-    NgContentComponent
+    NgContentComponent,
+    LifecycleComponent,
+    LifecycleSearchComponent
   ],
   imports: [
     BrowserModule,
