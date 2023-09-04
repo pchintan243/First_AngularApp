@@ -24,6 +24,7 @@ import { ContentChildComponent } from './content-child/content-child.component';
 import { SetBackgroundDirective } from './CustomDirective/setbackground.directive';
 import { HighlightDirective } from './CustomDirective/highlight.directive';
 import { HoverDirective } from './CustomDirective/hover.directive';
+import { HostbindingDirective } from './CustomDirective/hostbinding.directive';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { HoverDirective } from './CustomDirective/hover.directive';
     ContentChildComponent,
     SetBackgroundDirective,
     HighlightDirective,
-    HoverDirective
+    HoverDirective,
+    HostbindingDirective
   ],
   imports: [
     BrowserModule,
