@@ -31,6 +31,7 @@ import { CardHighlightComponent } from './card-highlight/card-highlight.componen
 import { CustomStyleDirective } from './CustomDirective/custom-style.directive';
 import { NgIfDirective } from './CustomDirective/ng-if.directive';
 import { CustStructComponent } from './cust-struct/cust-struct.component';
+import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { CustStructComponent } from './cust-struct/cust-struct.component';
     CardHighlightComponent,
     CustomStyleDirective,
     NgIfDirective,
-    CustStructComponent
+    CustStructComponent,
+    NgSwitchComponent
   ],
   imports: [
     BrowserModule,
