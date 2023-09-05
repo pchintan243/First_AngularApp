@@ -1,0 +1,17 @@
+<div class="row" style="display: flex; justify-content: space-evenly;">
+    <ng-container *ngFor="let item of like">
+        
+        <div class="card p-0 my-2" style="width: 300px;"
+        [appCardHighlight]="item.likes === mostLikedVideo.likes">
+            <div class="card-body">
+                <h5 class="card-title"><strong>{{item.title}}</strong></h5>
+                <p class="card-text desc"><strong>Share: </strong>{{item.share}}</p>
+                <div class="price-tag">
+                    <span class="prem-tag"><strong>Comments: </strong>{{item.comments}}</span>
+                    <br>
+                    <span class="pr-tag"><strong>Likes:</strong> {{item.likes}}</span>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

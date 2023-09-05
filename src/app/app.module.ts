@@ -26,6 +26,8 @@ import { HighlightDirective } from './CustomDirective/highlight.directive';
 import { HoverDirective } from './CustomDirective/hover.directive';
 import { HostbindingDirective } from './CustomDirective/hostbinding.directive';
 import { ClassDirective } from './CustomDirective/class.directive';
+import { CardHighlightDirective } from './CustomDirective/card-highlight.directive';
+import { CardHighlightComponent } from './card-highlight/card-highlight.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { ClassDirective } from './CustomDirective/class.directive';
     HighlightDirective,
     HoverDirective,
     HostbindingDirective,
-    ClassDirective
+    ClassDirective,
+    CardHighlightDirective,
+    CardHighlightComponent
   ],
   imports: [
     BrowserModule,
