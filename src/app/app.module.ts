@@ -29,6 +29,8 @@ import { ClassDirective } from './CustomDirective/class.directive';
 import { CardHighlightDirective } from './CustomDirective/card-highlight.directive';
 import { CardHighlightComponent } from './card-highlight/card-highlight.component';
 import { CustomStyleDirective } from './CustomDirective/custom-style.directive';
+import { NgIfDirective } from './CustomDirective/ng-if.directive';
+import { CustStructComponent } from './cust-struct/cust-struct.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { CustomStyleDirective } from './CustomDirective/custom-style.directive';
     ClassDirective,
     CardHighlightDirective,
     CardHighlightComponent,
-    CustomStyleDirective
+    CustomStyleDirective,
+    NgIfDirective,
+    CustStructComponent
   ],
   imports: [
     BrowserModule,
