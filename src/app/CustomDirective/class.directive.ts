@@ -10,9 +10,6 @@ export class ClassDirective {
   // we can pass the selector as a alias and directly apply it to ngclass
   // @Input('appClass') set display(value: object) {
     
-  // we can pass the selector as a alias and directly apply it to ngclass
-  // @Input('appClass') set display(value: object) {
-    
   // another way to does above
   @Input() set appClass(value: object) {
     let entries = Object.entries(value);
