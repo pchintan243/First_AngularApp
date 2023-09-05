@@ -1,0 +1,11 @@
+.span {
+    margin: 30px;
+    padding: 30px;
+    background-color: red;
+}
+
+.change-font {
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: chocolate;
+}
