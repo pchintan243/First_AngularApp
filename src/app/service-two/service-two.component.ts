@@ -4,13 +4,15 @@ import { OneService } from '../Services/one.service';
 @Component({
   selector: 'app-service-two',
   templateUrl: './service-two.component.html',
-  styleUrls: ['./service-two.component.css']
+  styleUrls: ['./service-two.component.css'],
+  providers: [OneService]
 })
 export class ServiceTwoComponent {
-  title: string = 'second one'
+  title: string = 'second'
+
+  constructor(private oneService: OneService) { }
 
   clickIt() {
-    const instaneOfService = new OneService();
-    instaneOfService.onClick(this.title);
+    this.oneService.onClick(this.title);
   }
 }
