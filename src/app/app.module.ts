@@ -32,6 +32,8 @@ import { CustomStyleDirective } from './CustomDirective/custom-style.directive';
 import { NgIfDirective } from './CustomDirective/ng-if.directive';
 import { CustStructComponent } from './cust-struct/cust-struct.component';
 import { NgSwitchComponent } from './ng-switch/ng-switch.component';
+import { ServiceOneComponent } from './service-one/service-one.component';
+import { ServiceTwoComponent } from './service-two/service-two.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { NgSwitchComponent } from './ng-switch/ng-switch.component';
     CustomStyleDirective,
     NgIfDirective,
     CustStructComponent,
-    NgSwitchComponent
+    NgSwitchComponent,
+    ServiceOneComponent,
+    ServiceTwoComponent
   ],
   imports: [
     BrowserModule,
