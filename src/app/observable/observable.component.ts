@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, filter, from, map, of } from 'rxjs';
+import { Observable, filter, from, interval, map, of } from 'rxjs';
 
 @Component({
   selector: 'app-observable',
@@ -57,50 +57,65 @@ export class ObservableComponent implements OnInit {
     return val > 3;
   }));
 
+  counterObs = interval(1000);
+  counterSub: any;
+
   ngOnInit(): void {
     // subscribe method takes 3 optional parameter which is next, error, complete.
     this.myObservable.subscribe((val) => {
-      console.log(val);
+      // console.log(val);
     }, (err) => {
-      console.log(err.message);
+      // console.log(err.message);
     }, () => {
-      console.log('Completed..!!');
+      // console.log('Completed..!!');
     })
 
     // of observable logic
     this.obs.subscribe((val) => {
-      console.log(val);
+      // console.log(val);
     }, (err) => {
-      console.log(err.message);
+      // console.log(err.message);
     }, () => {
-      console.log('Completed..!!');
+      // console.log('Completed..!!');
     })
 
     // from observable logic
     this.obss.subscribe((val) => {
-      console.log(val);
+      // console.log(val);
     }, (err) => {
-      console.log(err.message);
+      // console.log(err.message);
     }, () => {
-      console.log('Completed..!!');
+      // console.log('Completed..!!');
     })
 
     // map logic
     this.tranObss.subscribe((val) => {
-      console.log(val);
+      // console.log(val);
     }, (err) => {
-      console.log(err.message);
+      // console.log(err.message);
     }, () => {
-      console.log('Completed..!!');
+      // console.log('Completed..!!');
     })
 
     // Filter logic
     this.filterObss.subscribe((val) => {
-      console.log(val);
+      // console.log(val);
     }, (err) => {
-      console.log(err.message);
+      // console.log(err.message);
     }, () => {
-      console.log('Completed..!!');
+      // console.log('Completed..!!');
     })
+
+    // For interval logic --> subscribe method
+    this.counterSub = this.counterObs.subscribe((value) => {
+      console.log(value);
+    });
+
+  }
+
+  unsubscribe() {
+    // To stop the subscribe data
+    // Stop emitting the data when ununsubscribe() method invokes
+    this.counterSub.unsubscribe()
   }
 }
