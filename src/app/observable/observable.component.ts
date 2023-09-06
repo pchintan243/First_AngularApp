@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, from, of } from 'rxjs';
 
 @Component({
   selector: 'app-observable',
@@ -21,14 +21,43 @@ export class ObservableComponent implements OnInit {
     setTimeout(() => { observer.next("6"); }, 6000);
   })
 
+  arr1 = [1, 2, 3, 4, 5]
+  arr2 = ['A', 'B', 'C', 'D', 'E']
+  // Another type of observable
+  // of operator emits the value as it is.
+  // It takes multiple arguments.
+  obs = of(this.arr1, this.arr2);
+
+  // From iterates over the iterable and execute value one by one
+  // It takes single argument
+  obss = from(this.arr1);
+
   ngOnInit(): void {
     // subscribe method takes 3 optional parameter which is next, error, complete.
     this.myObservable.subscribe((val) => {
       console.log(val);
     }, (err) => {
-      alert(err.message)
+      console.log(err.message);
     }, () => {
-      alert('Completed..!!');
+      console.log('Completed..!!');
+    })
+
+
+    this.obs.subscribe((val) => {
+      console.log(val);
+    }, (err) => {
+      console.log(err.message);
+    }, () => {
+      console.log('Completed..!!');
+    })
+
+
+    this.obss.subscribe((val) => {
+      console.log(val);
+    }, (err) => {
+      console.log(err.message);
+    }, () => {
+      console.log('Completed..!!');
     })
   }
 }
