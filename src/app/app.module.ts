@@ -38,6 +38,7 @@ import { OneService } from './Services/one.service';
 import { UserComponent } from './user/user.component';
 import { UserService } from './Services/user.service';
 import { AddUserComponent } from './add-user/add-user.component';
+import { AnotherService } from './Services/another.service';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,7 @@ import { AddUserComponent } from './add-user/add-user.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [OneService, UserService],
+  providers: [OneService, UserService, AnotherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
