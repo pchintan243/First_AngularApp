@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, from, of } from 'rxjs';
+import { Observable, filter, from, map, of } from 'rxjs';
 
 @Component({
   selector: 'app-observable',
@@ -32,6 +32,31 @@ export class ObservableComponent implements OnInit {
   // It takes single argument
   obss = from(this.arr1);
 
+
+  // manipulate the data
+  tranObss = this.obss.pipe(map((val) => {
+    return val * 5;
+  }))
+
+  // Filter the data.
+  filterObss = this.obss.pipe(filter((val) => {
+    return val > 3;
+  }))
+
+  // Combination of map and filter
+  comb = this.obss.pipe(map((val) => {
+    return val * 5;
+  }), filter((val) => {
+    return val > 3;
+  }))
+
+  // Short hand property
+  short = from(this.arr1).pipe(map((val) => {
+    return val * 5;
+  }), filter((val) => {
+    return val > 3;
+  }));
+
   ngOnInit(): void {
     // subscribe method takes 3 optional parameter which is next, error, complete.
     this.myObservable.subscribe((val) => {
@@ -42,7 +67,7 @@ export class ObservableComponent implements OnInit {
       console.log('Completed..!!');
     })
 
-
+    // of observable logic
     this.obs.subscribe((val) => {
       console.log(val);
     }, (err) => {
@@ -51,8 +76,26 @@ export class ObservableComponent implements OnInit {
       console.log('Completed..!!');
     })
 
-
+    // from observable logic
     this.obss.subscribe((val) => {
+      console.log(val);
+    }, (err) => {
+      console.log(err.message);
+    }, () => {
+      console.log('Completed..!!');
+    })
+
+    // map logic
+    this.tranObss.subscribe((val) => {
+      console.log(val);
+    }, (err) => {
+      console.log(err.message);
+    }, () => {
+      console.log('Completed..!!');
+    })
+
+    // Filter logic
+    this.filterObss.subscribe((val) => {
       console.log(val);
     }, (err) => {
       console.log(err.message);
