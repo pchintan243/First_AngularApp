@@ -35,6 +35,9 @@ import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 import { ServiceOneComponent } from './service-one/service-one.component';
 import { ServiceTwoComponent } from './service-two/service-two.component';
 import { OneService } from './Services/one.service';
+import { UserComponent } from './user/user.component';
+import { UserService } from './Services/user.service';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -68,14 +71,16 @@ import { OneService } from './Services/one.service';
     CustStructComponent,
     NgSwitchComponent,
     ServiceOneComponent,
-    ServiceTwoComponent
+    ServiceTwoComponent,
+    UserComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [OneService],
+  providers: [OneService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
