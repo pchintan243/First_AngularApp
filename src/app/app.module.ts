@@ -42,6 +42,7 @@ import { AnotherService } from './Services/another.service';
 import { UserDataComponent } from './user-data/user-data.component';
 import { DataService } from './Services/data.service';
 import { UserShowComponent } from './user-show/user-show.component';
+import { ObservableComponent } from './observable/observable.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { UserShowComponent } from './user-show/user-show.component';
     UserComponent,
     AddUserComponent,
     UserDataComponent,
-    UserShowComponent
+    UserShowComponent,
+    ObservableComponent
   ],
   imports: [
     BrowserModule,
