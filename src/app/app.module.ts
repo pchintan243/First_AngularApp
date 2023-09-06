@@ -43,6 +43,9 @@ import { UserDataComponent } from './user-data/user-data.component';
 import { DataService } from './Services/data.service';
 import { UserShowComponent } from './user-show/user-show.component';
 import { ObservableComponent } from './observable/observable.component';
+import { Subject1Component } from './subject1/subject1.component';
+import { Subject2Component } from './subject2/subject2.component';
+import { SubjectDataService } from './Services/subject-data.service';
 
 @NgModule({
   declarations: [
@@ -81,14 +84,16 @@ import { ObservableComponent } from './observable/observable.component';
     AddUserComponent,
     UserDataComponent,
     UserShowComponent,
-    ObservableComponent
+    ObservableComponent,
+    Subject1Component,
+    Subject2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [OneService, UserService, AnotherService, DataService],
+  providers: [OneService, UserService, AnotherService, DataService, SubjectDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
