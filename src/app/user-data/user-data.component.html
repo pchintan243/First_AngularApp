@@ -1,0 +1,7 @@
+<div class="card my-2" *ngFor="let user of userData">
+    <div class="card-body">
+        <span class="title"><strong>{{user.name}}</strong></span>
+        <span class="card-text">{{user.job}}</span>
+        <button (click)="showDetails(user)" class="btn btn-primary">Show Details</button>
+    </div>
+</div>

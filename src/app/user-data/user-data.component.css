@@ -1,0 +1,20 @@
+.card {
+    width: 100%;
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-size: 20px;
+    padding: 10px;
+    width: 200px;
+}
+
+.card-text {
+    padding: 10px;
+    width: 200px;
+    font-weight: 600;
+}

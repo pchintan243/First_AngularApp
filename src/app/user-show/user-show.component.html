@@ -1,0 +1,10 @@
+<div class="card-container" *ngIf="user != undefined">
+    <div class="card">
+        <img [src]="user.image">
+        <h3>{{user.name}}</h3>
+        <p>{{user.job}}</p>
+        <p>{{user.gender}}</p>
+        <p>{{user.country}}</p>
+        <p>{{user.age}}</p>
+    </div>
+</div>

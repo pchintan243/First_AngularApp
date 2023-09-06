@@ -39,6 +39,9 @@ import { UserComponent } from './user/user.component';
 import { UserService } from './Services/user.service';
 import { AddUserComponent } from './add-user/add-user.component';
 import { AnotherService } from './Services/another.service';
+import { UserDataComponent } from './user-data/user-data.component';
+import { DataService } from './Services/data.service';
+import { UserShowComponent } from './user-show/user-show.component';
 
 @NgModule({
   declarations: [
@@ -74,14 +77,16 @@ import { AnotherService } from './Services/another.service';
     ServiceOneComponent,
     ServiceTwoComponent,
     UserComponent,
-    AddUserComponent
+    AddUserComponent,
+    UserDataComponent,
+    UserShowComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [OneService, UserService, AnotherService],
+  providers: [OneService, UserService, AnotherService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
