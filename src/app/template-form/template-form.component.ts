@@ -20,9 +20,30 @@ export class TemplateFormComponent {
     { id: '4', value: 'programming' }
   ]
 
-  @ViewChild('inputValue') value: NgForm | undefined;
+  @ViewChild('inputValue') form: NgForm | undefined;
 
   onSubmit() {
-    console.log(this.value);
+    console.log(this.form);
+  }
+
+  // To set the default value
+  // patchvalue is recommended to set the default value
+  setDefault() {
+    // For setValue we need to write all the fields of form.
+
+    // this.form?.setValue({
+    //   country: "India",
+    //   email: "patelchintan843@gmail.com",
+    //   firstname: "firstname",
+    //   gender: "female",
+    //   hobbies: '',
+    //   interest: "coding",
+    //   lastname: "firstname",
+    // })
+
+    // pathvalue requires only those fields which we have to set by default.
+    this.form?.form.patchValue({
+      firstname: 'jfdljs'
+    })
   }
 }

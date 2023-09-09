@@ -12,8 +12,9 @@
         </div>
         <div class="form-group">
             <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" name="lastname" [(ngModel)]="firstname" required>
+            <input type="text" id="last-name" name="lastname" [(ngModel)]="lastname" required>
         </div>
+        <button (click)="setDefault()">Set Default</button>
         <div class="form-group">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" ngModel required email>
