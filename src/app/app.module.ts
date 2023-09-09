@@ -7,7 +7,7 @@ import { ContainerComponent } from './Container/container.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchComponent } from './search/search.component';
 import { BadgeComponent } from './badge/badge.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductComponent } from './product/product.component';
 import { CourseComponent } from './course/course.component';
 import { HeaderComponent } from './header/header.component';
@@ -47,6 +47,7 @@ import { Subject1Component } from './subject1/subject1.component';
 import { Subject2Component } from './subject2/subject2.component';
 import { SubjectDataService } from './Services/subject-data.service';
 import { TemplateFormComponent } from './template-form/template-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -88,12 +89,14 @@ import { TemplateFormComponent } from './template-form/template-form.component';
     ObservableComponent,
     Subject1Component,
     Subject2Component,
-    TemplateFormComponent
+    TemplateFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [OneService, UserService, AnotherService, DataService, SubjectDataService],
   bootstrap: [AppComponent]

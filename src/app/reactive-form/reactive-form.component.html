@@ -1,0 +1,45 @@
+<div class="container">
+    <h2>Registration Form</h2>
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" formControlName="firstname" required>
+        </div>
+        <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" formControlName="lastname" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" formControlName="email" required>
+        </div>
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country" formControlName="country" required>
+                <option value="United States">United States</option>
+                <option value="Canada">Canada</option>
+                <option value="United Kingdom">United Kingdom</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="checkbox-group">
+                <label><input type="radio" formControlName="gender" value="male"> Male</label>
+                <label><input type="radio" formControlName="gender" value="female"> Female</label>
+                <label><input type="radio" formControlName="gender" value="other"> Other</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Hobbies</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" formControlName="hobbies" value="reading"> Reading</label>
+                <label><input type="checkbox" formControlName="hobbies" value="traveling"> Traveling</label>
+                <label><input type="checkbox" formControlName="hobbies" value="cooking"> Cooking</label>
+                <label><input type="checkbox" formControlName="hobbies" value="sports"> Sports</label>
+            </div>
+        </div>
+        <div class="button-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
