@@ -4,7 +4,7 @@
     <form (ngSubmit)="onSubmit()" #inputValue="ngForm">
         <div class="form-group">
             <label for="first-name">First Name</label>
-            <input type="text" id="first-name" name="firstname" [(ngModel)]="firstname" required #fname="ngModel">
+            <input type="text" id="first-name" name="firstname" ngModel required #fname="ngModel">
             <div>
                 <!-- It Only show if users don't write anything and leave it after touch. -->
                 <small *ngIf="fname.invalid && fname.touched" style="color: red;">Firstname is required..</small>
@@ -12,16 +12,16 @@
         </div>
         <div class="form-group">
             <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" name="lastname" [(ngModel)]="lastname" required>
+            <input type="text" id="last-name" name="lastname" ngModel required>
         </div>
-        <button (click)="setDefault()">Set Default</button>
+        <!-- <button (click)="setDefault()">Set Default</button> -->
         <div class="form-group">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" ngModel required email>
         </div>
         <div class="form-group">
             <label for="country">Country</label>
-            <select id="country" name="country" [ngModel]="default">
+            <select id="country" name="country" [ngModel]="country">
                 <option value="United States">United States</option>
                 <option value="Canada">Canada</option>
                 <option value="United Kingdom">United Kingdom</option>
@@ -59,4 +59,12 @@
             <button type="submit" [disabled]="!inputValue.valid">Submit</button>
         </div>
     </form>
+</div>
+<div class="container">
+    <p>Firstname: <strong>{{firstname}}</strong></p>
+    <p>Lastname: <strong>{{lastname}}</strong></p>
+    <p>Email: <strong>{{email}}</strong></p>
+    <p>Gender: <strong>{{gender}}</strong></p>
+    <p>Country: <strong>{{country}}</strong></p>
+    <p>Interest: <strong>{{defaultInterest}}</strong></p>
 </div>

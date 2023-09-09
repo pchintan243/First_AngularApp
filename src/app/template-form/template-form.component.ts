@@ -7,11 +7,13 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./template-form.component.css']
 })
 export class TemplateFormComponent {
-  default: string = 'India';
 
-  firstname: string = 'firstname';
-  lastname: string = 'lastname';
-  defaultInterest = 'coding';
+  firstname: string = '';
+  lastname: string = '';
+  email: string = '';
+  country: string = '';
+  gender: string = '';
+  defaultInterest = '';
 
   interest = [
     { id: '1', value: 'computer' },
@@ -24,6 +26,15 @@ export class TemplateFormComponent {
 
   onSubmit() {
     console.log(this.form);
+    this.firstname = this.form?.value.firstname;
+    this.lastname = this.form?.value.lastname;
+    this.gender = this.form?.value.gender;
+    this.country = this.form?.value.country;
+    this.defaultInterest = this.form?.value.interest;
+    this.email = this.form?.value.email;
+
+    // After submit it removes the information from fields.
+    this.form?.reset();
   }
 
   // To set the default value
