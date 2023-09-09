@@ -7,6 +7,10 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./template-form.component.css']
 })
 export class TemplateFormComponent {
+  default: string = 'India';
+
+  firstname: string = 'f';
+  lastname: string = 'f';
 
   @ViewChild('inputValue') value: NgForm | undefined;
 
