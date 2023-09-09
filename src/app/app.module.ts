@@ -46,6 +46,7 @@ import { ObservableComponent } from './observable/observable.component';
 import { Subject1Component } from './subject1/subject1.component';
 import { Subject2Component } from './subject2/subject2.component';
 import { SubjectDataService } from './Services/subject-data.service';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { SubjectDataService } from './Services/subject-data.service';
     UserShowComponent,
     ObservableComponent,
     Subject1Component,
-    Subject2Component
+    Subject2Component,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,

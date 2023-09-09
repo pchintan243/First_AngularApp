@@ -1,0 +1,46 @@
+<div class="container">
+    <h2>Registration Form</h2>
+    <form (ngSubmit)="onSubmit()" #inputValue="ngForm">
+        <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="firstname" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="lastname" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country" name="country" ngModel>
+                <option value="us">United States</option>
+                <option value="ca">Canada</option>
+                <option value="uk">United Kingdom</option>
+                <!-- Add more countries as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="checkbox-group">
+                <label><input type="radio" name="gender" value="male" ngModel> Male</label>
+                <label><input type="radio" name="gender" value="female" ngModel> Female</label>
+                <label><input type="radio" name="gender" value="other" ngModel> Other</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Hobbies</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="hobbies" value="reading" ngModel> Reading</label>
+                <label><input type="checkbox" name="hobbies" value="traveling" ngModel> Traveling</label>
+                <label><input type="checkbox" name="hobbies" value="cooking" ngModel> Cooking</label>
+                <label><input type="checkbox" name="hobbies" value="sports" ngModel> Sports</label>
+            </div>
+        </div>
+        <div class="button-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
