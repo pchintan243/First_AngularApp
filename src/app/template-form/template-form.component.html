@@ -36,6 +36,16 @@
             </div>
         </div>
         <div class="form-group">
+            <label>Interest</label>
+            <div class="checkbox-group" *ngFor="let item of interest">
+                <label>
+                    <input id="{{item.id}}" type="radio" name="interest" value="{{item.value}}"
+                        [ngModel]="defaultInterest">
+                    {{item.value}}
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
             <label>Hobbies</label>
             <div class="checkbox-group">
                 <label><input type="checkbox" name="hobbies" value="reading" ngModel> Reading</label>

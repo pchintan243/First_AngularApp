@@ -9,8 +9,16 @@ import { NgForm } from '@angular/forms';
 export class TemplateFormComponent {
   default: string = 'India';
 
-  firstname: string = 'f';
-  lastname: string = 'f';
+  firstname: string = 'firstname';
+  lastname: string = 'lastname';
+  defaultInterest = 'coding';
+
+  interest = [
+    { id: '1', value: 'computer' },
+    { id: '2', value: 'web development' },
+    { id: '3', value: 'coding' },
+    { id: '4', value: 'programming' }
+  ]
 
   @ViewChild('inputValue') value: NgForm | undefined;
 
