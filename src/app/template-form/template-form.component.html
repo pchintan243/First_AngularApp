@@ -1,5 +1,6 @@
 <div class="container">
     <h2>Registration Form</h2>
+    <!-- ngModelGroup is use for grouping the fields -->
     <form (ngSubmit)="onSubmit()" #inputValue="ngForm">
         <div class="form-group">
             <label for="first-name">First Name</label>
@@ -11,7 +12,7 @@
         </div>
         <div class="form-group">
             <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" name="lastname" [(ngModel)]="lastname" required>
+            <input type="text" id="last-name" name="lastname" [(ngModel)]="firstname" required>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
