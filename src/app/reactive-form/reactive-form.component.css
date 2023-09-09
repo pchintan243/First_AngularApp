@@ -66,3 +66,8 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+/* If fields data are not valid then styles would be applied */
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
+}
