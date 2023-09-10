@@ -1,6 +1,7 @@
 import { ProductService } from './../Services/product.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Product } from '../model/product.';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-http-request',
@@ -11,7 +12,13 @@ export class HttpRequestComponent implements OnInit {
 
   spinner: boolean = false;
 
+  editMode: boolean = false;
+
+  currId: string = '';
   allProduct: Product[] = []
+
+  @ViewChild('productForms') form: NgForm;
+
 
   constructor(private ProductService: ProductService) { }
 
@@ -24,7 +31,13 @@ export class HttpRequestComponent implements OnInit {
   }
 
   onProductSubmit(products: { pname: string, desc: string, price: string }) {
-    this.ProductService.createProduct(products);
+
+    if (!this.editMode) {
+      this.ProductService.createProduct(products);
+    }
+    else {
+      this.ProductService.updateProduct(this.currId, products)
+    }
   }
 
   private fetchProduct() {
@@ -41,5 +54,24 @@ export class HttpRequestComponent implements OnInit {
 
   onDeleteAllProduct() {
     this.ProductService.deleteAllProduct();
+  }
+
+  onUpdateProduct(id: string) {
+
+    this.currId = id;
+
+    // Get the product id
+    let cur = this.allProduct.find((curElm) => {
+      return curElm.id === id;
+    })
+    console.log(cur);
+
+    this.form.setValue({
+      pname: cur.pname,
+      desc: cur.desc,
+      price: cur.price
+    });
+
+    this.editMode = true;
   }
 }

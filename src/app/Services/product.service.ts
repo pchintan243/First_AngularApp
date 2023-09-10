@@ -6,7 +6,7 @@ import { Product } from '../model/product.';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {  
+export class ProductService {
 
   constructor(private http: HttpClient) { }
 
@@ -41,5 +41,9 @@ export class ProductService {
 
   deleteAllProduct() {
     this.http.delete('https://procademy-dffe6-default-rtdb.firebaseio.com/products.json').subscribe();
+  }
+
+  updateProduct(id: string, value: Product) {
+    this.http.put('https://procademy-dffe6-default-rtdb.firebaseio.com/products/' + id + '.json', value).subscribe();
   }
 }
