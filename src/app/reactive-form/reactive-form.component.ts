@@ -24,6 +24,18 @@ export class ReactiveFormComponent implements OnInit {
         new FormControl(null, Validators.required),
       ])
     })
+
+    // Value change events
+    this.reactiveForm.valueChanges.subscribe((value) => {
+      // console.log(value);
+    })
+
+    // Status change event return the state form.
+    // It returns valid invalid and pending state
+    // If all of the fields are valid then and then only it returns valid otherwise it retuns false
+    this.reactiveForm.statusChanges.subscribe((value) => {
+      // console.log(value);
+    })
   }
 
   get skillsArr() {
