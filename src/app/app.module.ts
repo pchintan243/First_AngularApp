@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContainerComponent } from './Container/container.component';
@@ -48,6 +48,7 @@ import { Subject2Component } from './subject2/subject2.component';
 import { SubjectDataService } from './Services/subject-data.service';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { HttpRequestComponent } from './http-request/http-request.component';
 
 @NgModule({
   declarations: [
@@ -90,13 +91,15 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     Subject1Component,
     Subject2Component,
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    HttpRequestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [OneService, UserService, AnotherService, DataService, SubjectDataService],
   bootstrap: [AppComponent]
