@@ -36,6 +36,7 @@ export class ReactiveFormComponent implements OnInit {
     this.reactiveForm.statusChanges.subscribe((value) => {
       // console.log(value);
     })
+
   }
 
   get skillsArr() {
@@ -44,6 +45,7 @@ export class ReactiveFormComponent implements OnInit {
 
   onSubmit() {
     console.log(this.reactiveForm);
+    this.reactiveForm.reset();
   }
 
   addSkill() {
