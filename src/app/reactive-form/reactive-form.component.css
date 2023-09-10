@@ -53,7 +53,7 @@ input[type="radio"] {
     text-align: center;
 }
 
-button {
+.sub-button {
     background-color: #007bff;
     color: #fff;
     padding: 10px 20px;

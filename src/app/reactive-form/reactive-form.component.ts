@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -9,7 +9,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ReactiveFormComponent implements OnInit {
 
   reactiveForm!: FormGroup;
-
   // In reactive form we need to implement all the logic into typescript file.
 
   ngOnInit(): void {
@@ -20,12 +19,22 @@ export class ReactiveFormComponent implements OnInit {
       email: new FormControl('patelchintan843@gmail.com', [Validators.required, Validators.email]),
       country: new FormControl('Canada'),
       gender: new FormControl('male'),
-      hobbies: new FormControl(null)
+      hobbies: new FormControl(null),
+      skills: new FormArray([
+        new FormControl(null, Validators.required),
+      ])
     })
+  }
+
+  get skillsArr() {
+    return this.reactiveForm.get('skills') as FormArray;
   }
 
   onSubmit() {
     console.log(this.reactiveForm);
+  }
 
+  addSkill() {
+    (<FormArray>this.reactiveForm.get('skills')).push(new FormControl(null, Validators.required));
   }
 }

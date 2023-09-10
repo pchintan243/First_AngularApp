@@ -42,8 +42,16 @@
                 <label><input type="checkbox" formControlName="hobbies" value="sports"> Sports</label>
             </div>
         </div>
+
+        <div class="form-group" formArrayName="skills">
+            <ng-container *ngFor="let skill of skillsArr.controls; let i = index;">
+                <label for="Skills">Skills</label>
+                <input type="text" formControlName="{{i}}">
+            </ng-container>
+            <button (click)="addSkill()" class="btn btn-sm btn-secondary my-2">+add skill</button>
+        </div>
         <div class="button-group">
-            <button type="submit">Submit</button>
+            <button class="sub-button" type="submit">Submit</button>
         </div>
     </form>
 </div>
