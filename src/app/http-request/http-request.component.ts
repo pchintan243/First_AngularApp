@@ -12,6 +12,8 @@ export class HttpRequestComponent implements OnInit {
 
   allProduct: Product[] = []
 
+  spinner: boolean = false;
+
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -34,6 +36,7 @@ export class HttpRequestComponent implements OnInit {
   }
 
   private fetchProduct() {
+    this.spinner = true;
     this.http.get<{ [key: string]: Product }>('https://procademy-dffe6-default-rtdb.firebaseio.com/products.json')
       .pipe(map((res) => {
         const products = [];
@@ -47,6 +50,15 @@ export class HttpRequestComponent implements OnInit {
       .subscribe((data) => {
         this.allProduct = data;
         console.log(data);
+        this.spinner = false;
       })
+  }
+
+  onDeleteProduct(id: string) {
+    this.http.delete('https://procademy-dffe6-default-rtdb.firebaseio.com/products/' + id + '.json').subscribe()
+  }
+
+  onDeleteAllProduct() {
+    this.http.delete('https://procademy-dffe6-default-rtdb.firebaseio.com/products.json').subscribe();
   }
 }

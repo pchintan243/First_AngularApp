@@ -31,18 +31,24 @@
                         <th>Price</th>
                         <th></th>
                     </tr>
+                    <tr *ngIf="allProduct.length < 1 && !spinner">
+                        <td colspan="5">No Products Available</td>
+                    </tr>
+                    <tr *ngIf="spinner">
+                        <td colspan="5">Loading....</td>
+                    </tr>
                     <tr *ngFor="let item of allProduct; index as i">
                         <td>{{i + 1}}</td>
                         <td>{{item.pname}}</td>
                         <td>{{item.desc}}</td>
                         <td>${{item.price}}</td>
-                        <td><button class="btn-delete">Delete</button></td>
+                        <td><button class="btn-delete" (click)="onDeleteProduct(item.id)">Delete</button></td>
                     </tr>
                 </table>
                 <hr>
                 <div class="action-btn-container">
                     <button class="btn-fetch" (click)="onProductFetch()">Fetch Product</button>
-                    <button class="btn-clear">Clear Product</button>
+                    <button class="btn-clear" (click)="onDeleteAllProduct()">Clear Product</button>
                 </div>
             </div>
         </div>
