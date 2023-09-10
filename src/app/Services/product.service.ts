@@ -27,7 +27,10 @@ export class ProductService {
 
   fetchProduct() {
 
-    return this.http.get<{ [key: string]: Product }>('https://procademy-dffe6-default-rtdb.firebaseio.com/products.json')
+    const header = new HttpHeaders().set('Content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*')
+
+    return this.http.get<{ [key: string]: Product }>('https://procademy-dffe6-default-rtdb.firebaseio.com/products.json', { 'headers': header })
       .pipe(map((res) => {
         const products = [];
         for (const key in res) {
