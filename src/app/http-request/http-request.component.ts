@@ -16,6 +16,7 @@ export class HttpRequestComponent implements OnInit {
 
   currId: string = '';
   allProduct: Product[] = []
+  errMsg: string = null;
 
   @ViewChild('productForms') form: NgForm;
 
@@ -24,6 +25,9 @@ export class HttpRequestComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchProduct();
+    this.ProductService.error.subscribe((msg) => {
+      this.errMsg = msg;
+    })
   }
 
   onProductFetch() {
@@ -45,6 +49,8 @@ export class HttpRequestComponent implements OnInit {
     this.ProductService.fetchProduct().subscribe((data) => {
       this.allProduct = data;
       this.spinner = false;
+    }, (err) => {
+      this.errMsg = err.message;
     })
   }
 

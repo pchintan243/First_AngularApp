@@ -2,11 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from "rxjs/operators";
 import { Product } from '../model/product.';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+  error = new Subject<string>();
 
   constructor(private http: HttpClient) { }
 
@@ -18,6 +20,8 @@ export class ProductService {
       { headers: header })
       .subscribe((data) => {
         console.log(data);
+      }, (err) => {
+        this.error = err.message;
       })
   }
 
