@@ -49,6 +49,7 @@ import { SubjectDataService } from './Services/subject-data.service';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { HttpRequestComponent } from './http-request/http-request.component';
+import { ProductService } from './Services/product.service';
 
 @NgModule({
   declarations: [
@@ -101,7 +102,7 @@ import { HttpRequestComponent } from './http-request/http-request.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [OneService, UserService, AnotherService, DataService, SubjectDataService],
+  providers: [OneService, UserService, AnotherService, DataService, SubjectDataService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
